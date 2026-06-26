@@ -1,0 +1,102 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Smooth transitions for elements */
+.transition-theme, .btn, .nav-link, .card {
+  transition: all 0.25s ease-in-out;
+}
+
+/* Custom premium styling for cards */
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-bs-theme="dark"] .card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="dark"] .card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Stats card indicators */
+.stats-card {
+  border-left: 5px solid #0d6efd;
+}
+.stats-card-primary {
+  border-left-color: #0d6efd;
+}
+.stats-card-success {
+  border-left-color: #198754;
+}
+.stats-card-warning {
+  border-left-color: #ffc107;
+}
+.stats-card-info {
+  border-left-color: #0dcaf0;
+}
+
+/* Active Nav Links style */
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #ffc107 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #ffc107;
+}
+
+/* Custom Pagination styles */
+.pagination .page-item .page-link {
+  border-radius: 6px;
+  margin: 0 2px;
+  color: var(--bs-body-color);
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-border-color);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+/* Custom tag style for country filters */
+.country-tag {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.country-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Favorite button animation */
+.btn-fav {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+.btn-fav:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* Smooth fade-in animation for pages */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}

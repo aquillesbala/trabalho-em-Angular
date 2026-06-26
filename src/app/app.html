@@ -1,0 +1,92 @@
+<div class="d-flex flex-column min-vh-100">
+  <!-- Navigation Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm py-3 transition-theme">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center fw-bold fs-4" routerLink="/home">
+          <i class="bi bi-mortarboard-fill me-2 fs-3 text-warning"></i>
+          <span>AngularUniversity</span>
+        </a>
+
+        <!-- Hamburger toggle for mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item me-2">
+              <a class="nav-link px-3" routerLink="/home" routerLinkActive="active">
+                <i class="bi bi-house-door me-1"></i> Início
+              </a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-3" routerLink="/results" routerLinkActive="active">
+                <i class="bi bi-search me-1"></i> Resultados
+              </a>
+            </li>
+            <li class="nav-item me-2">
+              <a class="nav-link px-3" routerLink="/favorites" routerLinkActive="active">
+                <i class="bi bi-star-fill text-warning me-1"></i> Favoritos
+              </a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link px-3" routerLink="/about" routerLinkActive="active">
+                <i class="bi bi-info-circle me-1"></i> Sobre
+              </a>
+            </li>
+            
+            <!-- Divider on mobile only -->
+            <li class="nav-item d-lg-none my-2"><hr class="text-white-50"></li>
+
+            <!-- Theme Toggle Switch -->
+            <li class="nav-item ms-lg-2">
+              <button 
+                class="btn btn-outline-light rounded-pill px-3 d-flex align-items-center justify-content-center"
+                (click)="toggleTheme()"
+                [title]="isDarkMode() ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro'"
+              >
+                <i class="bi" [ngClass]="isDarkMode() ? 'bi-sun-fill text-warning' : 'bi-moon-fill'"></i>
+                <span class="ms-2 d-lg-none">{{ isDarkMode() ? 'Tema Claro' : 'Tema Escuro' }}</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main View Area -->
+  <main class="flex-grow-1 py-4 bg-body-tertiary">
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-auto border-top border-secondary">
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-md-start mb-3 mb-md-0">
+          <h5 class="mb-1 text-warning fw-bold">AngularUniversity</h5>
+          <p class="small text-white-50 mb-0">Catálogo mundial de Universidades com Angular</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p class="small text-white-50 mb-0">
+            Desenvolvido por <strong>Aquilles</strong>. Desenvolvimento Web. &copy; 2026.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
